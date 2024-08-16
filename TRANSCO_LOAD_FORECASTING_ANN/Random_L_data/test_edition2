@@ -1,0 +1,26 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Seed for reproducibility
+np.random.seed(42)
+
+# Number of data points
+n_points = 500
+
+# Generate a base trend that gradually increases
+base_trend = np.linspace(1400, 1700, n_points)
+
+# Add small random deviations
+deviations = np.random.normal(0, 20, n_points)  # mean 0, standard deviation 20
+
+# Create the final data by adding deviations to the base trend
+data = base_trend + deviations
+
+# Plot the data
+plt.figure(figsize=(10, 5))
+plt.plot(data, marker='o', linestyle='-', markersize=3)
+plt.title('Gradually Upwards Trend with Small Deviations')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.grid(True)
+plt.show()
